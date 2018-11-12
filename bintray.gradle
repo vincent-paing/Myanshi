@@ -1,0 +1,68 @@
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
+apply plugin: 'java'
+
+def artifactGroup = 'com.aungkyawpaing.myanshi'
+def buildVersion = '1.0.0'
+def artifactName = 'myanshi'
+
+
+bintray {
+    user = System.getenv('BINTRAY_USER')
+    key = System.getenv('BINTRAY_API_KEY')
+    publications = ['MyPublication']
+    configurations = ['archives']
+    publish = true
+    override = true
+    pkg {
+        repo = 'maven'
+        name = 'myanshi'
+        licenses = ['WTFPL']
+        vcsUrl = "https://github.com/vincent-paing/Myanshi.git"
+        version {
+            name = '1.0.1'
+        }
+    }
+}
+
+// Create the pom configuration:
+def pomConfig = {
+    licenses {
+        license {
+            name "DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE "
+            url "http://www.wtfpl.net/txt/copying"
+        }
+    }
+    developers {
+        developer {
+            id "aungkyawpaing"
+            name "aungkyawpaing"
+            email "dev@aungkyawpaing.com"
+        }
+    }
+
+    scm {
+        url "https://github.com/vincent-paing/Myanshi"
+    }
+}
+
+publishing {
+    publications {
+        MyPublication(MavenPublication) {
+            from components.java
+            artifact sourcesJar
+            artifact javadocJar
+            groupId "$artifactGroup"
+            artifactId "$artifactId"
+            version '1.0.1'
+            pom.withXml {
+                def root = asNode()
+                root.appendNode('description', 'Moshi Converter for ZG <=> Unicode')
+                root.appendNode('name', 'Myanshi')
+                root.appendNode('url', 'https://github.com/vincent-paing/Myanshi')
+                root.children().last() + pomConfig
+            }
+        }
+    }
+}
+
