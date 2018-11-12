@@ -54,7 +54,7 @@ publishing {
             artifact javadocJar
             groupId "$artifactGroup"
             artifactId "$artifactId"
-            version '1.0.1'
+            version '1.0.0'
             pom.withXml {
                 def root = asNode()
                 root.appendNode('description', 'Moshi Converter for ZG <=> Unicode')
