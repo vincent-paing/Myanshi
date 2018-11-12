@@ -20,7 +20,7 @@ bintray {
         licenses = ['WTFPL']
         vcsUrl = "https://github.com/vincent-paing/Myanshi.git"
         version {
-            name = '1.0.1'
+            name = '1.0.0'
         }
     }
 }
