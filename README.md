@@ -3,11 +3,11 @@
 
 # Myanshi
 
-Myanshi is a moshi converter that automatically converts between two popular burmese encoding, standardized unicode encoding and Zawgyi
+Myanshi is a [Moshi](https://github.com/square/moshi) converter that automatically converts between two popular burmese encoding, standardized unicode encoding and Zawgyi
 
 ## Usage
 
-Intialize your moshi with the following:
+Initialize your Moshi instance with the following:
 
 ```kotlin
 val moshi: Moshi = Moshi.Builder()
@@ -33,7 +33,7 @@ person.name.unicode
 
 By default the burmese string in JSON are treated as unicode, which is preferred for storing data, as it's more standardized for sorting,searching etc.
 
-However, you can annotate your fields to explicity state the encoding format
+However, you can annotate your fields to explicitly state the encoding format
 
 ```kotlin
 data class Person(
@@ -61,7 +61,7 @@ repositories {
     jcenter()
 }
 
-compile 'com.aungkyawpaing.myanshi:myanshi-converter:1.0.1'
+compile 'com.aungkyawpaing.myanshi:myanshi-converter:1.0.0'
 ```
 
 
