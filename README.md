@@ -1,4 +1,4 @@
-[![Download](https://api.bintray.com/packages/vincent-paing/maven/myanShi/images/download.svg) ](https://bintray.com/vincent-paing/maven/myanShi/_latestVersion)[![Build Status](https://travis-ci.com/vincent-paing/Myanshi.svg?branch=master)](https://travis-ci.com/vincent-paing/Myanshi)
+[![Download](https://api.bintray.com/packages/vincent-paing/maven/myanshi/images/download.svg) ](https://bintray.com/vincent-paing/maven/myanShi/_latestVersion)[![Build Status](https://travis-ci.com/vincent-paing/Myanshi.svg?branch=master)](https://travis-ci.com/vincent-paing/Myanshi)
 
 
 # Myanshi
